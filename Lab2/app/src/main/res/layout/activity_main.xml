@@ -43,7 +43,7 @@
         android:layout_toRightOf="@+id/textView"
         android:layout_toEndOf="@+id/textView"
         android:text="Button2"
-        android:background="#FF12"
+        android:background="#FF00"
         android:layout_weight="0.14"
         android:onClick="doButton2"/>
 

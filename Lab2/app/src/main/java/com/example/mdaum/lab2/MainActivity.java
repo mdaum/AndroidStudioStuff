@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private TextView text;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         text=(TextView)findViewById(R.id.textView);
         b1Toggle=false;
+        Toast.makeText(this,"app started",Toast.LENGTH_SHORT).show();
     }
 
     void doButton1(View v){
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         else{
             b1.setBackgroundColor(Color.parseColor("#FFFF0000"));
             b1Toggle=true;
-
+            Toast.makeText(this,"same image",Toast.LENGTH_SHORT).show();
         }
         text.setText("button1!");
 

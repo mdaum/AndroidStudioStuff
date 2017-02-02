@@ -1,8 +1,10 @@
 package com.example.mdaum.assignment1;
 
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
@@ -84,6 +86,26 @@ public class MainActivity extends AppCompatActivity {
                 b.setBackgroundColor(Color.parseColor("#FF000000"));
                 b.setTextColor(Color.parseColor("#FFFFFFFF"));
             }
+        }
+    }
+
+    void toggleButton(Button b){
+        if(((ColorDrawable)b.getBackground()).getColor()==Color.BLACK){
+            b.setBackgroundColor(Color.parseColor("#FFFFFFFF"));
+            b.setTextColor(Color.parseColor("#FF000000"));
+        }
+        else{
+            b.setBackgroundColor(Color.parseColor("#FF000000"));
+            b.setTextColor(Color.parseColor("#FFFFFFFF"));
+        }
+    }
+
+    void handleButton(View v){
+        Button caller = (Button)v;
+        ArrayList<Button>toToggle = buttonMap.get(caller);
+        for (Button b:
+             toToggle) {
+            toggleButton(b);
         }
     }
 

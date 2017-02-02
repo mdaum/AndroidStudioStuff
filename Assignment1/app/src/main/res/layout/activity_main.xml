@@ -16,112 +16,112 @@
         android:text="0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:id="@+id/button0" />
 
     <Button
         android:text="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:id="@+id/button1" />
 
     <Button
         android:text="2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:id="@+id/button2" />
 
     <Button
         android:text="3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:id="@+id/button3" />
 
     <Button
         android:text="4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:id="@+id/button4" />
 
     <Button
         android:text="5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:id="@+id/button5" />
 
     <Button
         android:text="6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:id="@+id/button6" />
 
     <Button
         android:text="7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:id="@+id/button7" />
 
     <Button
         android:text="8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:id="@+id/button8" />
 
     <Button
         android:text="9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:id="@+id/button9" />
 
     <Button
         android:text="10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:id="@+id/button10" />
 
     <Button
         android:text="11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:id="@+id/button11" />
 
     <Button
         android:text="12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:id="@+id/button12" />
 
     <Button
         android:text="13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:id="@+id/button13" />
 
     <Button
         android:text="14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:id="@+id/button14" />
 
     <Button
         android:text="15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:id="@+id/button15" />
 
     <Button
@@ -129,79 +129,89 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#e13d45"
-        android:layout_margin="0.5dp"
-        android:id="@+id/buttonA" />
+        android:layout_margin="0.8dp"
+        android:id="@+id/buttonA"
+        android:onClick="handleButton"/>
 
     <Button
         android:text="B"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:background="#e13d45"
-        android:id="@+id/buttonB" />
+        android:id="@+id/buttonB"
+        android:onClick="handleButton"/>
 
     <Button
         android:text="C"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:background="#e13d45"
-        android:id="@+id/buttonC" />
+        android:id="@+id/buttonC"
+        android:onClick="handleButton"/>
 
     <Button
         android:text="D"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:background="#e13d45"
-        android:id="@+id/buttonD" />
+        android:id="@+id/buttonD"
+        android:onClick="handleButton"/>
 
     <Button
         android:text="E"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:background="#e13d45"
-        android:id="@+id/buttonE" />
+        android:id="@+id/buttonE"
+        android:onClick="handleButton"/>
 
     <Button
         android:text="F"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:background="#e13d45"
-        android:id="@+id/buttonF" />
+        android:id="@+id/buttonF"
+        android:onClick="handleButton"/>
 
     <Button
         android:text="G"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:background="#e13d45"
-        android:id="@+id/buttonG" />
+        android:id="@+id/buttonG"
+        android:onClick="handleButton"/>
 
     <Button
         android:text="H"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:background="#e13d45"
-        android:id="@+id/buttonH" />
+        android:id="@+id/buttonH"
+        android:onClick="handleButton"/>
 
     <Button
         android:text="I"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:background="#e13d45"
-        android:id="@+id/buttonI" />
+        android:id="@+id/buttonI"
+        android:onClick="handleButton"/>
 
     <Button
         android:text="J"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="0.5dp"
+        android:layout_margin="0.8dp"
         android:background="#e13d45"
-        android:id="@+id/buttonJ" />
+        android:id="@+id/buttonJ"
+        android:onClick="handleButton"/>
 
 </GridLayout>

@@ -1,11 +1,13 @@
 package com.example.mdaum.assignment1;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,15 +15,17 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    HashMap<Button,ArrayList<Button>> buttonMap;
+    HashMap<Button,ArrayList<Button>> button2buttonMap;
+    HashMap<Button,ArrayList<Integer>> button2numberMap;
+    boolean[]gameState;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mapButtons();
+        mapButtons2Buttons();
         setupGame();
     }
-    void mapButtons(){ //maps all switches to their squares
+    void mapButtons2Buttons(){ //maps all switches to their squares
         ArrayList<Button> A=new ArrayList<Button>();
         A.add((Button)findViewById(R.id.button0));A.add((Button)findViewById(R.id.button1));A.add((Button)findViewById(R.id.button2));
         ArrayList<Button> B=new ArrayList<Button>();
@@ -42,20 +46,24 @@ public class MainActivity extends AppCompatActivity {
         I.add((Button)findViewById(R.id.button1));I.add((Button)findViewById(R.id.button2));I.add((Button)findViewById(R.id.button3));I.add((Button)findViewById(R.id.button4));I.add((Button)findViewById(R.id.button5));
         ArrayList<Button> J=new ArrayList<Button>();
         J.add((Button)findViewById(R.id.button3));J.add((Button)findViewById(R.id.button4));J.add((Button)findViewById(R.id.button5));J.add((Button)findViewById(R.id.button9));J.add((Button)findViewById(R.id.button13));
-        buttonMap=new HashMap<Button,ArrayList<Button>>();
-        buttonMap.put((Button)findViewById(R.id.buttonA),A);
-        buttonMap.put((Button)findViewById(R.id.buttonB),B);
-        buttonMap.put((Button)findViewById(R.id.buttonC),C);
-        buttonMap.put((Button)findViewById(R.id.buttonD),D);
-        buttonMap.put((Button)findViewById(R.id.buttonE),E);
-        buttonMap.put((Button)findViewById(R.id.buttonF),F);
-        buttonMap.put((Button)findViewById(R.id.buttonG),G);
-        buttonMap.put((Button)findViewById(R.id.buttonH),H);
-        buttonMap.put((Button)findViewById(R.id.buttonI),I);
-        buttonMap.put((Button)findViewById(R.id.buttonJ),J);
-
+        button2buttonMap=new HashMap<Button,ArrayList<Button>>();
+        button2buttonMap.put((Button)findViewById(R.id.buttonA),A);
+        button2buttonMap.put((Button)findViewById(R.id.buttonB),B);
+        button2buttonMap.put((Button)findViewById(R.id.buttonC),C);
+        button2buttonMap.put((Button)findViewById(R.id.buttonD),D);
+        button2buttonMap.put((Button)findViewById(R.id.buttonE),E);
+        button2buttonMap.put((Button)findViewById(R.id.buttonF),F);
+        button2buttonMap.put((Button)findViewById(R.id.buttonG),G);
+        button2buttonMap.put((Button)findViewById(R.id.buttonH),H);
+        button2buttonMap.put((Button)findViewById(R.id.buttonI),I);
+        button2buttonMap.put((Button)findViewById(R.id.buttonJ),J);
+    }
+    int Button2Index(Button b){
+        String id =(String) b.getText();
+        return Integer.parseInt(id);
     }
     void setupGame(){
+        gameState=new boolean[16];
         ArrayList<Button>squares;
         squares=new ArrayList<Button>();
         squares.add((Button)findViewById(R.id.button0));
@@ -79,33 +87,51 @@ public class MainActivity extends AppCompatActivity {
              squares) {
             boolean color = r.nextBoolean();
             if(color) {
-                b.setBackgroundColor(Color.parseColor("#FFFFFFFF"));
-                b.setTextColor(Color.parseColor("#FF000000"));
+                b.setBackgroundColor(Color.parseColor("#FFFFFFFF"));//white
+                b.setTextColor(Color.parseColor("#FF000000"));//black
             }
             else {
                 b.setBackgroundColor(Color.parseColor("#FF000000"));
                 b.setTextColor(Color.parseColor("#FFFFFFFF"));
             }
+            gameState[Button2Index(b)]=color;
         }
     }
 
     void toggleButton(Button b){
         if(((ColorDrawable)b.getBackground()).getColor()==Color.BLACK){
-            b.setBackgroundColor(Color.parseColor("#FFFFFFFF"));
-            b.setTextColor(Color.parseColor("#FF000000"));
+            b.setBackgroundColor(Color.parseColor("#FFFFFFFF"));//white
+            b.setTextColor(Color.parseColor("#FF000000"));//black
+            gameState[Button2Index(b)]=true;
         }
         else{
             b.setBackgroundColor(Color.parseColor("#FF000000"));
             b.setTextColor(Color.parseColor("#FFFFFFFF"));
+            gameState[Button2Index(b)]=false;
         }
     }
 
     void handleButton(View v){
         Button caller = (Button)v;
-        ArrayList<Button>toToggle = buttonMap.get(caller);
+        ArrayList<Button>toToggle = button2buttonMap.get(caller);
         for (Button b:
              toToggle) {
             toggleButton(b);
+        }
+        //check win condition
+        boolean done=true;
+        boolean first = gameState[0];
+        for (boolean bool:
+             gameState) {
+            if(first!=bool)done=false;
+        }
+        if(done){
+            Context context = getApplicationContext();
+            CharSequence text = "You Win!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
         }
     }
 
